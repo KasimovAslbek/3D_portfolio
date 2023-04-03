@@ -1,13 +1,46 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@layer utilities {
+    .scrollbar {
+        scrollbar-width: none;
+      }
+    
+    .scrollbar::-webkit-scrollbar {
+        display: none;
+     }
+    .astro{
+        animation: animate 2s infinite ease alternate;
+    }
+    @keyframes animate {
+        100%{
+            transform: translateY(20px);
+        }
+
+    }
+    .ListItem {
+        position: relative;
+    }
+    .ListItem::after{
+        content: "${(props)=>props.text}";
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: pink;
+        width: 0px;
+        overflow: hidden;
+        white-space: nowrap;
+
+    }
+    .ListItem:hover::after{
+            animation: moveText 0.5s linear both;
+
+        }
+        @keyframes moveText {
+                to{
+                    width: 100%;
+                }
+        }
+    }
+
