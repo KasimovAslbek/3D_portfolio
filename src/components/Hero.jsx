@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <div className=' h-screen snap-center flex flex-col items-center'>
         <Navbar/>
-        <div className='md:w-[1400px] h-screen block md:flex md:items-center md:justify-between'>
+        <div className='md:w-[1400px] h-screen block md:flex items-center justify-between'>
             <div className='md:w-2/5 flex flex-col px-10 md:px-0   gap-5'>
                 <h2 className='pt-10 md:pt-0 text-3xl md:text-7xl '>Think. Make. Solve</h2>
                 <div className='flex  items-center gap-2.5'>
